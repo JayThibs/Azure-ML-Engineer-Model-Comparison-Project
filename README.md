@@ -2,16 +2,22 @@
 
 ## Overview
 This project is part of the Udacity Azure ML Nanodegree.
-In this project, we build and optimize an Azure ML pipeline using the Python SDK and a provided Scikit-learn model.
+
+In this project, we build and optimize an Azure ML pipeline using the Python SDK and a provided Scikit-learn model (Logistic Regression). To find the optimal hyperparameters for the Logistic Regression model, we use AzureML's HyperDrive which helps use perform a hyperparameter search. In other words, we train many models on our training data to see how the hyperparameters have an effect on performance and find the best hyperparameters.
+
 This model is then compared to an Azure AutoML run.
 
 ## Summary
-**In 1-2 sentences, explain the problem statement: e.g "This dataset contains data about... we seek to predict..."**
+This dataset contains data regarding direct marketing campaigns (phone calls) of a Portuguese banking institution. The classification goal is to predict if the client will subscribe a term deposit. Dataset can be found here: https://archive.ics.uci.edu/ml/datasets/Bank+Marketing.
 
-**In 1-2 sentences, explain the solution: e.g. "The best performing model was a ..."**
+The HyperDrive model had an accuracy of 0.9112, while **the best AutoML model (VotingEnsemble) had an accuracy of 0.9166**. Therefore, the **AutoML model performed slightly better** than the Logistic Regression model trained with HyperDrive.
 
 ## Scikit-learn Pipeline
-**Explain the pipeline architecture, including data, hyperparameter tuning, and classification algorithm.**
+**Explanation of the pipeline architecture:**
+
+
+
+
 
 **What are the benefits of the parameter sampler you chose?**
 
