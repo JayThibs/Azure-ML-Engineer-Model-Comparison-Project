@@ -46,11 +46,11 @@ Random Search is generally better than Grid Search because it allows you to achi
 
 ### The early stopping policy we chose:
 
-We used the [Bandit Policy](https://docs.microsoft.com/en-us/python/api/azureml-train-core/azureml.train.hyperdrive.banditpolicy?view=azure-ml-py) for our early stopping policy. Bandit policy stops a run if the target performance metric doesn't fall within the slack factor (ratio) or slack amount (absolute amount) of the best run so far. In other words, this policy allows us to end runs when a model is no longer improving so that we may move on to training the next model. This helps save time and computation resources.
+We used the [Bandit Policy](https://docs.microsoft.com/en-us/python/api/azureml-train-core/azureml.train.hyperdrive.banditpolicy?view=azure-ml-py) for our early stopping policy. Bandit policy stops a run if the target performance metric doesn't fall within the `slack factor` (ratio) or `slack amount` (absolute amount) of the best run so far. In other words, this policy allows us to end runs when a model is no longer improving so that we may move on to training the next model. This helps save time and computation resources.
 
-We chose an evaluation interval of 2 (the policy is applied every two interval where the primary metric is reported).
+We chose an `evaluation interval` of 2 (the policy is applied every two interval where the primary metric is reported).
 
-We also chose a slack factor of 0.1. Any run whose accuracy is less than (1 / (1 + 0.1)) or 91% of the best run will be terminated.
+We also chose a `slack factor` of 0.1. Any run whose accuracy is less than (1 / (1 + 0.1)) or 91% of the best run will be terminated.
 
 ## AutoML
 
@@ -58,15 +58,15 @@ AutoML allows you to automatically run a series of different algorithms and para
 
 The hyperparameters for the model:
 
-* reg_alpha=0 (default value)
-* reg_lambda=0.520833
-* scale_pos_weight=1 (default value)
-* seed=None (default value)
-* silent=None
-* subsample=0.6
-* tree_method='auto' (default value)
-* verbose=-10
-* verbosity=0
+* `reg_alpha=0` (default value)
+* `reg_lambda=0.520833`
+* `scale_pos_weight=1` (default value)
+* `seed=None` (default value)
+* `silent=None`
+* `subsample=0.6`
+* `tree_method='auto'` (default value)
+* `verbose=-10`
+* `verbosity=0`
 
 ## Pipeline Comparison
 
