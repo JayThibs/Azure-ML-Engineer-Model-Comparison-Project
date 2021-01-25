@@ -17,7 +17,7 @@ This dataset contains data regarding direct marketing campaigns (phone calls) of
 The HyperDrive model had an accuracy of 0.9112, while **the best AutoML model (VotingEnsemble) had an accuracy of 0.9166**. Therefore, the **AutoML model performed slightly better** than the Logistic Regression model trained with HyperDrive.
 
 ## Scikit-learn Pipeline
-**Explanation of the pipeline architecture:**
+### Explanation of the pipeline architecture:
 
 The pipeline is broken up into 7 steps.
 
@@ -38,13 +38,13 @@ For the HyperDrive model, we used a [logistic regression](https://scikit-learn.o
 
 `max_iter`: Maximum number of iterations taken for the model to converge. We used the following values: [10, 50, 100].
 
-**Benefits of the parameter sampler we chose:**
+### Benefits of the parameter sampler we chose:
 
 We used the `RandomParameterSampling` (Random Search) method to test the performance of different parameters for our logistic regression model. For Random Search, you define a search space as a bounded domain of hyperparameter values and randomly sample points in that domain. In contrast, Grid Search you specify and evaluate every point within the space.
 
 Random Search is generally better than Grid Search because it allows you to achieve the same performance (if not, it's close), but with much less training runs with different hyperparameters.
 
-**The early stopping policy we chose:**
+### The early stopping policy we chose:
 
 We used the [Bandit Policy](https://docs.microsoft.com/en-us/python/api/azureml-train-core/azureml.train.hyperdrive.banditpolicy?view=azure-ml-py) for our early stopping policy. Bandit policy stops a run if the target performance metric doesn't fall within the slack factor (ratio) or slack amount (absolute amount) of the best run so far. In other words, this policy allows us to end runs when a model is no longer improving so that we may move on to training the next model. This helps save time and computation resources.
 
