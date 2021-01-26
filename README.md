@@ -1,7 +1,6 @@
 # Optimizing an ML Pipeline in Azure
 
 ## Overview
-This project is part of the Udacity Azure ML Nanodegree.
 
 In this project, we build and optimize an Azure ML pipeline using the Python SDK and a provided Scikit-learn model (Logistic Regression). To find the optimal hyperparameters for the Logistic Regression model, we use AzureML's HyperDrive which helps use perform a hyperparameter search. In other words, we train many models on our training data to see how the hyperparameters have an effect on performance and find the best hyperparameters.
 
