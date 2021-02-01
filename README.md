@@ -11,7 +11,7 @@ This model is then compared to an Azure AutoML run.
 * [hyperdrive_vs_automl_comparison.ipynb](https://github.com/JayThibs/Azure-ML-Engineer-Model-Comparison-Project/blob/main/hyperdrive_vs_automl_comparison.ipynb): Notebook containing the code that uses the AzureML python SDK to create experiments, set dependencies, spin up computer cluster, submit experiments, and save the best model.
 
 ## Summary
-We use a dataset that contains data regarding direct marketing campaigns (phone calls) of a Portuguese banking institution. The classification goal is to predict if the client will subscribe a term deposit, based on features such as age, job, marital status, and education. Dataset can be found here: https://archive.ics.uci.edu/ml/datasets/Bank+Marketing.
+We use a dataset that contains data regarding direct marketing campaigns (phone calls) of a Portuguese banking institution. The classification goal is to predict if the client will subscribe a term deposit, based on features such as age, job, marital status, and education. The dataset can be found here: [Bank Marketing dataset](https://archive.ics.uci.edu/ml/datasets/Bank+Marketing).
 
 The HyperDrive model had an accuracy of 0.9112, while **the best AutoML model (VotingEnsemble) had an accuracy of 0.9166**. Therefore, the **AutoML model performed slightly better** than the Logistic Regression model trained with HyperDrive.
 
