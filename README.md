@@ -1,5 +1,17 @@
 # Optimizing an ML Pipeline in Azure
 
+## Table of Contents
+   * [Overview](#Overview)
+   * [Summary](#Summary)
+   * [Scikit-learn-Pipeline](#Scikit-learn-Pipeline)
+   * [Benefits of the parameter sampler we chose](#Benefits-of-the-parameter-sampler-we-chose)
+   * [Screen Recording](#Screen-Recording)
+   * [Comments and future improvements](#Comments-and-future-improvements)
+   * [Dataset Citation](#Dataset-Citation)
+   * [References](#References)
+
+***
+
 ## Overview
 
 In this project, we build and optimize an Azure ML pipeline using the Python SDK and a provided Scikit-learn model (Logistic Regression). To find the optimal hyperparameters for the Logistic Regression model, we use AzureML's HyperDrive which helps use perform a hyperparameter search. In other words, we train many models on our training data to see how the hyperparameters have an effect on performance and find the best hyperparameters.
@@ -10,10 +22,14 @@ This model is then compared to an Azure AutoML run.
 
 * [hyperdrive_vs_automl_comparison.ipynb](https://github.com/JayThibs/Azure-ML-Engineer-Model-Comparison-Project/blob/main/hyperdrive_vs_automl_comparison.ipynb): Notebook containing the code that uses the AzureML python SDK to create experiments, set dependencies, spin up computer cluster, submit experiments, and save the best model.
 
+***
+
 ## Summary
 We use a dataset that contains data regarding direct marketing campaigns (phone calls) of a Portuguese banking institution. The classification goal is to predict if the client will subscribe a term deposit, based on features such as age, job, marital status, and education. The dataset can be found here: [Bank Marketing dataset](https://archive.ics.uci.edu/ml/datasets/Bank+Marketing).
 
 The HyperDrive model had an accuracy of 0.9112, while **the best AutoML model (VotingEnsemble) had an accuracy of 0.9166**. Therefore, the **AutoML model performed slightly better** than the Logistic Regression model trained with HyperDrive.
+
+***
 
 ## Scikit-learn Pipeline
 ### Explanation of the pipeline architecture:
@@ -51,6 +67,8 @@ We chose an `evaluation interval` of 2 (the policy is applied every two interval
 
 We also chose a `slack factor` of 0.1. Any run whose accuracy is less than (1 / (1 + 0.1)) or 91% of the best run will be terminated.
 
+***
+
 ## AutoML
 
 AutoML allows you to automatically run a series of different algorithms and parameters for you. In our experiment, there were 32 models trained, and VotingEnsemble had the best accuracy at 91.66%.
@@ -67,6 +85,8 @@ The hyperparameters for the model:
 * `verbose=-10`
 * `verbosity=0`
 
+***
+
 ## Pipeline Comparison
 
 * HyperDrive Logistic Regression model accuracy: 91.12%
@@ -76,6 +96,8 @@ The hyperparameters for the model:
 AutoML tested multiple algorithms (including ensembles), while HyperDrive only used Logistic Regression. The benefit of AutoML is that you are able to test many algorithms quickly, and therefore get a high accuracy without much work. However, it would not have required much more work to also test out other algorithms. I expect we could have beaten AutoML had we used another algorithm (like gradient boosted trees) with HyperDrive.
 
 AutoML automatically chose a set of hyperparameters for each model trained. For HyperDrive, we explicitly chose a domain of values that were used for training the model.
+
+***
 
 ## Future Work
 **What are some areas of improvement for future experiments? Why might these improvements help the model?**
@@ -99,6 +121,8 @@ We would like to try using Bayesian Optimization to train our HyperDrive model.
 ### Dealing with Data Imbalance
 
 Our output of the AutoML approach said that there was a possible data imbalance in our dataset. If we want to improve performance of our models, it may be worth it to deal with that issue and balance out the classes.
+
+***
 
 ## Cluster clean up
 
