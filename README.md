@@ -3,12 +3,11 @@
 ## Table of Contents
    * [Overview](#Overview)
    * [Summary](#Summary)
-   * [Scikit-learn-Pipeline](#Scikit-learn-Pipeline)
-   * [Benefits of the parameter sampler we chose](#Benefits-of-the-parameter-sampler-we-chose)
-   * [Screen Recording](#Screen-Recording)
-   * [Comments and future improvements](#Comments-and-future-improvements)
-   * [Dataset Citation](#Dataset-Citation)
-   * [References](#References)
+   * [Scikit-learn Pipeline](#Scikit-learn-Pipeline)
+   * [AutoML](#AutoML)
+   * [Pipeline Comparison](#Pipeline-Comparison)
+   * [Future Work](#Future-Work)
+   * [Cluster clean up](#Cluster-clean-up)
 
 ***
 
